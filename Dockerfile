@@ -26,6 +26,7 @@ RUN dpkg -x forticlient-sslvpn_amd64.deb /usr/share/forticlient && rm forticlien
 
 # Run setup
 RUN /usr/share/forticlient/opt/forticlient-sslvpn/64bit/helper/setup.linux.sh 2
+RUN mknod /dev/ppp c 108 0
 
 # Copy runfiles
 COPY forticlient /usr/bin/forticlient
